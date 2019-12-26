@@ -22,7 +22,11 @@ export const Colors = {
   "bg": "#015D67"
 }
 
+export const MobileWidth = 640
+
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+
   body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;

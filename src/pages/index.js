@@ -1,22 +1,21 @@
 import React from "react"
 import styled from "styled-components"
 
-import Layout, { Colors } from "../components/layout"
+import Layout, { Colors, MobileWidth } from "../components/layout"
 import SEO from "../components/seo"
 import QuestionIcon from "../images/question-icon.svg"
 import { getCachedAirData, aqiusToQuality } from "../helpers/air"
 import AirCanvas from "../components/air"
-
 
 const Container = styled.div`
   margin: 0px 80px;
   max-width: 480px;
   padding-top: 180px;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${MobileWidth}px) {
     margin: 0 20px;
     max-width: auto;
-    padding-top: 40px;
+    padding: 40px 0;
   }
 `
 
@@ -53,33 +52,20 @@ const AirInfo = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 480px) {
-    position: static;
-    margin-top: 100px;
+  @media (max-width: ${MobileWidth}px) {
+    display: none;
   }
 `
 
 const AirTooltipPrompt = styled.a`
   cursor: pointer;
   padding: 20px;
-  order: 1;
-
-  @media (max-width: 480px) {
-    order: 0;
-  }
 `
 
 const AirTooltip = styled.div`
   background: ${Colors.greenDark};
   max-width: 480px;
   margin: 0px 80px 20px 80px;
-  order: 0;
-
-  @media (max-width: 480px) {
-    order: 1;
-    margin: 0 20px;
-    max-width: auto;
-  }
 `
 const AirData = styled.span`
   font-weight: 900;
@@ -128,7 +114,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <SEO title="Ben Redfield" />
+        <SEO title="Hi" />
 
         <Container>
           <Title>
@@ -180,8 +166,6 @@ export default class IndexPage extends React.Component {
           <AirTooltipPrompt
             onMouseEnter={() => this.setState({ showAirTooltip: true })}
             onMouseLeave={() => this.setState({ showAirTooltip: false })}
-            target="_blank"
-            rel="noopener noreferrer"
             href="https://airnow.gov/index.cfm?action=aqibasics.aqi">
               <QuestionIcon />
           </AirTooltipPrompt>
