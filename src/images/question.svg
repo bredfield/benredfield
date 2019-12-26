@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#8ED2DB" stroke-width="3" cx="25" cy="35" r="14"></circle>
+        <line x1="25" y1="21" x2="25" y2="5.59370819" id="Line" stroke="#8ED2DB" stroke-width="3" stroke-linecap="square"></line>
+        <text id="?" font-family="Aeonik-Bold, Aeonik" font-size="20" font-weight="bold" fill="#8ED2DB">
+            <tspan x="19.66" y="43">?</tspan>
+        </text>
+        <polygon id="Triangle" fill="#8ED2DB" points="25 0 31 8 19 8"></polygon>
+    </g>
+</svg>

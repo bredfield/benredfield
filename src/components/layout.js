@@ -7,41 +7,51 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { createGlobalStyle } from "styled-components";
 
-import Header from "./header"
-import "./layout.css"
+export const Colors = {
+  "green": "#CAF0C1",
+  "greenDark": "#015D67",
+  "blue": "#87E4DB",
+  "gray": "#70A2A7",
+  "grayLight": "#ADC9CD",
+  "grayDark": "#4A5159",
+  "orange": "#FC7560",
+  "pink": "#F4B8B8",
+  "fg": "#F5F9F9",
+  "bg": "#015D67"
+}
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    background-color: ${Colors.bg};
+    color: ${Colors.fg};
+  }
+
+  p {
+    line-height: 24px;
+    font-size: 18px;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${Colors.green};
+  }
+
+  a:hover {
+    color: ${Colors.blueDark};
+  }
+`
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <React.Fragment>
+
+      <GlobalStyle />
+      <main>{children}</main>
+    </React.Fragment>
   )
 }
 
