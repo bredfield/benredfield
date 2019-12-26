@@ -123,7 +123,7 @@ export default class IndexPage extends React.Component {
 
           <Body>
             <p>
-              I design and build digital products and love helping humans work well together.
+              I design and build digital products, and love helping humans work well together.
             </p>
           </Body>
 
@@ -166,6 +166,8 @@ export default class IndexPage extends React.Component {
           <AirTooltipPrompt
             onMouseEnter={() => this.setState({ showAirTooltip: true })}
             onMouseLeave={() => this.setState({ showAirTooltip: false })}
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://airnow.gov/index.cfm?action=aqibasics.aqi">
               <QuestionIcon />
           </AirTooltipPrompt>
