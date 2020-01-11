@@ -6,31 +6,60 @@ import SEO from "../components/seo"
 import QuestionIcon from "../images/question-icon.svg"
 import { getCachedAirData, aqiusToQuality } from "../helpers/air"
 import AirCanvas from "../components/air"
+import KeyboardLeft from "../components/keyboard"
+
+const SingleColumnBreak = 1200
 
 const Container = styled.div`
   margin: 0px 80px;
-  max-width: 480px;
   padding-top: 180px;
 
-  @media (max-width: ${MobileWidth}px) {
+  @media (max-width: ${SingleColumnBreak}px) {
     margin: 0 20px;
     max-width: auto;
     padding: 40px 0;
   }
 `
 
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+`
+
+const Column = styled.div`
+  /* display: flex;
+  flex-direction: column;j
+  flex: 1; */
+`
+
+const BodyColumn = styled(Column)`
+  width: 480px;
+  max-width: 640px;
+  margin-right: 80px;
+`
+
+const KeyboardColumn = styled(Column)`
+  flex: 1;
+  align-self: center;
+
+  @media (max-width: ${SingleColumnBreak}px) {
+    margin-top: 80px;
+    margin-left: -20px;
+    /* text-align: center; */
+  }
+`
+
 const Title = styled.h3`
   color: ${Colors.grayLight};
-  margin-bottom: 30px;
   line-height: 26px;
 `
 
 const Body = styled.section`
-  margin: 40px 0;
 `
 
 const Job = styled.div`
-  margin-top: 20px;
 `
 
 const JobDate = styled.h4`
@@ -117,43 +146,50 @@ export default class IndexPage extends React.Component {
         <SEO title="Hi" />
 
         <Container>
-          <Title>
-            I'm Ben Redfield, a developer and product manager in Brooklyn, NY.
-          </Title>
+          <Row>
+            <BodyColumn>
+              <Title>
+                I'm Ben Redfield, a developer and product manager in Brooklyn, NY.
+              </Title>
 
-          <Body>
-            <p>
-              I design and build digital products, and love helping humans work well together.
-            </p>
-          </Body>
+              <Body>
+                <p>
+                  I design and build digital products, and love helping humans work well together.
+                </p>
+              </Body>
 
-          <Job>
-            <JobDate>Presently</JobDate>
-            <JobTitle>
-              Founder &amp; Product Manager @ <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://density.io">
-                  Density
-              </a>
-            </JobTitle>
-          </Job>
+              <Job>
+                <JobDate>Presently</JobDate>
+                <JobTitle>
+                  Founder &amp; Product Manager @ <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://density.io">
+                    Density
+                  </a>
+                </JobTitle>
+              </Job>
 
-          <Job>
-            <JobDate>Pastly</JobDate>
-            <JobTitle>
-              Partner &amp; Developer @ <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="http://roundedco.com">
-                  Rounded
-              </a>
-            </JobTitle>
-          </Job>
+              <Job>
+                <JobDate>Pastly</JobDate>
+                <JobTitle>
+                  Partner &amp; Developer @ <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="http://roundedco.com">
+                    Rounded
+                  </a>
+                </JobTitle>
+              </Job>
 
-          <ContactButton href="mailto:ben@benredfield.dev">
-            Say hi
-          </ContactButton>
+              <ContactButton href="mailto:ben@benredfield.dev">
+                Say hi
+              </ContactButton>
+            </BodyColumn>
+            <KeyboardColumn>
+              <KeyboardLeft />
+            </KeyboardColumn>
+          </Row>
         </Container>
 
         <AirCanvas pollution={pollution} />

@@ -125,7 +125,7 @@ export default class Air extends React.Component {
     const aqiUS = pollution.aqius
     const aqiPerc = aqiUS / 500
     const areaPerc = area / 500
-    const scaleFactor = .1
+    const scaleFactor = .05
 
     // calculate the number of pollutants to show
     // based on the air quality and canvas size
