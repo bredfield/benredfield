@@ -4,6 +4,7 @@ import { Howl } from "howler"
 import Mousetrap from "mousetrap"
 import * as d3 from "d3"
 
+import { MobileWidth } from "../components/layout"
 import KeyboardLeftImg from "../images/keyboard-left.svg"
 import keySound from "../sounds/key.mp3"
 
@@ -17,6 +18,10 @@ const KEYS = [
 const KeyboardLeftSVG = styled(KeyboardLeftImg)`
   cursor: pointer;
   user-select: none;
+
+  @media (max-width: ${MobileWidth}px) {
+    width: 100%;
+  }
 `
 
 export default class KeyboardLeft extends React.Component {

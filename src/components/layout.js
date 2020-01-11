@@ -9,6 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { createGlobalStyle } from "styled-components";
 
+import Aeonik from "../fonts/Aeonik-Regular.ttf"
+import AeonikBold from "../fonts/Aeonik-Bold.ttf"
+
+
 export const Colors = {
   "green": "#CAF0C1",
   "greenDark": "#015D67",
@@ -26,6 +30,16 @@ export const MobileWidth = 640
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+
+  @font-face {
+    font-family: 'Aeonik';
+    src: url(${Aeonik});
+  }
+
+  @font-face {
+    font-family: 'Aeonik-Bold';
+    src: url(${AeonikBold});
+  }
 
   body {
     font-family: 'Source Sans Pro', sans-serif;

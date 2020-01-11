@@ -47,7 +47,10 @@ const KeyboardColumn = styled(Column)`
   @media (max-width: ${SingleColumnBreak}px) {
     margin-top: 80px;
     margin-left: -20px;
-    /* text-align: center; */
+  }
+
+  @media (max-width: ${MobileWidth}px) {
+    margin-top: 30px;
   }
 `
 
