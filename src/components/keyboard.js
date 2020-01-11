@@ -18,6 +18,7 @@ const KEYS = [
 const KeyboardLeftSVG = styled(KeyboardLeftImg)`
   cursor: pointer;
   user-select: none;
+  -webkit-appearance: none;
 
   @media (max-width: ${MobileWidth}px) {
     width: 100%;
