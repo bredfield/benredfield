@@ -25,7 +25,7 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  width: 100%;a
 `
 
 const Column = styled.div`
